@@ -1,16 +1,14 @@
 <x-guest-layout>
-    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-    <link rel="stylesheet" href="{{asset('css/register.css')}}"/>
+<link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
+<link rel="stylesheet" href="{{asset('css/register.css')}}"/>
     <form method="POST" action="{{ route('register') }}">
         @csrf
-
-            <h1>会員登録</h1>
+        <h1>会員登録</h1>
         <!-- Name -->
         <div>
             <x-text-input id="name" class="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name"  placeholder="名前" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
-
         <!-- Email Address -->
         <div>
             <x-text-input id="email" class="mail" type="email" name="email" :value="old('email')" required autocomplete="username"  placeholder="メールアドレス" />
